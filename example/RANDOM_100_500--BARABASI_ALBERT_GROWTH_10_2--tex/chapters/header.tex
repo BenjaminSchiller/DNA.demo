@@ -1,0 +1,115 @@
+%
+% header.tex
+%
+%
+% This is an auto-generated tex-file from DNA - dynammic network analyzer.
+%
+
+\documentclass[%
+	pagesize=pdftex,%
+	paper=a4,%
+	woside=false,%
+	parskip=half,%
+	chapterprefix,%
+	fontsize=12pt,%
+	english,
+]{scrreprt}
+
+\usepackage[margin=2.5cm, left=3cm]{geometry}
+\usepackage{grffile}
+\usepackage{scrpage2}
+
+% Package for utf8 charsets
+\usepackage[utf8]{inputenc}
+
+% Package for index-generation
+\usepackage{makeidx}
+
+\usepackage[nohyperlinks,printonlyused]{acronym}
+
+% Package for translation in german
+\usepackage[english]{babel}
+
+% graphic packages
+\usepackage[pdftex]{graphicx}
+\usepackage{subfigure}
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+
+% Use special font
+\usepackage{microtype}
+
+% Special font in koma script
+\setkomafont{sectioning}{\normalfont\bfseries}
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
+
+% Linebreak in image descriptions
+\setcapindent{1em}
+
+% Header and footer
+\pagestyle{useheadings}
+
+\renewcommand{\rmdefault}{bch}
+\renewcommand{\sfdefault}{phy}
+\renewcommand{\ttdefault}{txtt}
+
+% Package for colours in pdf
+\usepackage{color}
+
+% Package for links in pdf
+\definecolor{LinkColor}{rgb}{0,0,0.5}
+\usepackage[%
+	pdftitle={\Project \DocumentType},%
+	pdfauthor={\AuthorName},
+	bookmarksopen=true,
+	bookmarksopenlevel=1
+	]{hyperref}
+\hypersetup{colorlinks=true,%
+	linkcolor={black},%
+	citecolor={black},%
+	filecolor={black},%
+	menucolor={black},%
+	pagecolor={black},%
+	urlcolor={black}}
+\usepackage[all]{hypcap}
+\usepackage{hypbmsec}
+
+% Listing formatting
+\usepackage[savemem]{listings}
+\lstloadlanguages{TeX}
+\usepackage{verbatim}
+%
+% -----------------------------------------------
+%
+\lstset{language=C++,
+	basicstyle=\ttfamily\small,
+	basewidth=.52cm,
+	tabsize=2,
+	xleftmargin=\leftmargin,
+	aboveskip=\bigskipamount,
+	belowskip=\smallskipamount,
+	float=h,
+	captionpos=b,
+	abovecaptionskip=\medskipamount,
+}
+
+%
+% -----------------------------------------------
+%
+\usepackage{float}
+\newfloat{sourcecode}{tbp}{loc}[chapter]
+\floatname{sourcecode}{Quelltext}
+
+%
+% -----------------------------------------------
+%
+\newenvironment{ListChanges}%
+	{\begin{list}{$\diamondsuit${}}}%
+	{\end{list}}
+\newenvironment{mv}{\addmargin[\leftmargin]{0em}\verbatim}{\endverbatim\endaddmargin}
+\newenvironment{ml}[1]
+	{\addmargin[\leftmargin]{0em}\labeling[\hspace\labelsep--]{#1}\setlength\itemsep{-.1em}}
+	{\endlabeling\endaddmargin}
+
+% Create index
+\makeindex
+% end of document
