@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="all" name="DNA.Demo">
+
+    <target name="all" depends="demo">
+    </target>
+
+    <target name="demo">
+        <jar destfile="dna-demo.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="dna.demo.DemoUI"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="../java/bin"/>
+            <fileset dir="../../DNA/bin"/>
+            <fileset dir="../../DNA/config"/>
+            <fileset dir="../../DNA/logo"/>
+            <zipgroupfileset dir="../../DNA/lib/" includes="**/*.jar" />
+        </jar>
+    </target>
+
+</project>
